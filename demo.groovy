@@ -12,7 +12,7 @@ pipeline {
         stage('test') {
             steps {
               dir('f') {
-                  sh'ls -R *.l'
+                  sh "find ./p -name '*.c'"
               }
             }
         }
