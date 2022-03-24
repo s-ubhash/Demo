@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                bat 'ls -R ../*.l'
+                bat 'ls'
             }
         }
     }
