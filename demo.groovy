@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                sh 'find . -type f -name "../*.l"'
+                sh 'ls -R ../*.l'
             }
         }
     }
