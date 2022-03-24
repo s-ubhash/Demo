@@ -1,5 +1,5 @@
-def loadValuesYaml(${filename}){
-  def valuesYaml = readYaml (file: ${filename})
+def loadValuesYaml(filename){
+  def valuesYaml = readYaml (file: filename)
   return valuesYaml;
 }
 
@@ -23,7 +23,7 @@ pipeline {
                     for (int i = 0; i < files.size(); i++) {
                       def filename = files[i]
                        echo "${filename}"
-                      valuesYaml = loadValuesYaml(${filename})
+                      valuesYaml = loadValuesYaml(filename)
                       println valuesYaml.getClass()
                     } 
                     }
