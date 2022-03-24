@@ -1,5 +1,5 @@
 pipeline {
- 
+    agent any
     stages {
         stage('Hello') {
             steps {
@@ -19,8 +19,7 @@ pipeline {
                       echo "${filename}"
                       data = readYaml file: "${filename}" 
                       scan_path = data[scan_path]
-                        scan_path.each { e ->
-                        echo "Translating ${e.getAt('application')} application ${e.getAt('path')}"
+                        scan_path.each { e -> echo "Translating ${e.getAt('application')} application ${e.getAt('path')}"
                     } 
                     }
                   }
