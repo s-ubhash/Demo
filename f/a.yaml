@@ -1,9 +1,2 @@
-project_name: project_name
-project_version: 1.0
-scan_path: 
-  - application: dotnet
-    path: Core
-  - application: dotnet
-    path: Brickburn
-  - application: dotnet
-    path: ServiceCatalo
+replicaCount: 1
+appName: test
