@@ -8,5 +8,15 @@ pipeline {
                 bat 'ls'
             }
         }
+        
+        stage('test') {
+            steps {
+              dir('f') {
+                  sh'ls -la'
+              }
+            }
+        }
+        
+        
     }
 }
