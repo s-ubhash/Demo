@@ -4,9 +4,7 @@ def loadValuesYaml(x){
 }
 
 pipeline {
-  agent {
-    label "jenkins-maven"
-  }
+  agent any
   environment {
     APP=loadValuesYaml('appName')
     REPLICACOUNT=loadValuesYaml('replicaCount')
