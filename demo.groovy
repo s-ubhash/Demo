@@ -1,9 +1,19 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'NAME', description: 'Please tell me your name')
-        choice(name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose Gender')
-    }
+    properties([
+     parameters([
+       booleanParam(
+         defaultValue: false,
+         description: 'isFoo should be false',
+         name: 'isFoo'
+       ),
+       booleanParam(
+         defaultValue: true,
+         description: 'isBar should be true',
+         name: 'isBar'
+       ),
+     ])
+   ])
     stages {
         stage('Printing name') {
             steps {
