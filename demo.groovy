@@ -1,6 +1,4 @@
-pipeline {
-    agent any
-    properties([
+properties([
      parameters([
        booleanParam(
          defaultValue: false,
@@ -14,6 +12,8 @@ pipeline {
        ),
      ])
    ])
+pipeline {
+    agent any
     stages {
         stage('Printing name') {
             steps {
