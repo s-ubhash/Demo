@@ -18,7 +18,7 @@ pipeline {
         stage('Printing name') {
             steps {
                 script {
-                    def name = "${params.NAME}"
+                    def name = "${params.isFoo}"
                     def gender = "${params.GENDER}"
                     if(gender == "Male") {
                         echo "Mr. $name"    
