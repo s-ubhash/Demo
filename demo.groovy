@@ -1,22 +1,22 @@
-def loadValuesYaml(x){
-  def valuesYaml = readYaml (file: './f/a.yaml')
-  return valuesYaml[x];
-}
-
 pipeline {
-  agent any
-  environment {
-    APP=loadValuesYaml('appName')
-    REPLICACOUNT=loadValuesYaml('replicaCount')
-  }
-  stages {
-    stage('CICD Initialize') {
-      steps {
-        script{
-          println APP
-          println REPLICACOUNT
-        }
-      }
+    agent any
+    parameters {
+        string(name: 'NAME', description: 'Please tell me your name')
+        choice(name: 'GENDER', choices: ['Male', 'Female'], description: 'Choose Gender')
     }
-  }
+    stages {
+        stage('Printing name') {
+            steps {
+                script {
+                    def name = "${params.NAME}"
+                    def gender = "${params.GENDER}"
+                    if(gender == "Male") {
+                        echo "Mr. $name"    
+                    } else {
+                        echo "Mrs. $name"
+                    }
+                }
+            }
+        }
+   }
 }
